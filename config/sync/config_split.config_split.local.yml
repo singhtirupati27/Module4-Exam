@@ -1,0 +1,26 @@
+uuid: 93be83e5-cceb-406d-a8df-0de11e137cd9
+langcode: en
+status: true
+dependencies: {  }
+id: local
+label: Local
+description: ''
+weight: 0
+folder: ../config/split/local
+module:
+  admin_toolbar: 0
+  admin_toolbar_tools: 0
+  dblog: 0
+  devel: 0
+  devel_generate: 0
+theme: {  }
+blacklist:
+  - admin_toolbar.settings
+  - admin_toolbar_tools.settings
+  - dblog.settings
+  - devel.settings
+  - devel.toolbar.settings
+  - system.site
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

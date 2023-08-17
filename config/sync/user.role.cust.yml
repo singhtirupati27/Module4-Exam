@@ -1,0 +1,14 @@
+uuid: 06919f4b-f86b-47a9-b63e-e7bb31d70d9f
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+id: cust
+label: Customer
+weight: 4
+is_admin: null
+permissions:
+  - 'create field_address'
+  - 'edit own field_address'
+  - 'view own field_address'

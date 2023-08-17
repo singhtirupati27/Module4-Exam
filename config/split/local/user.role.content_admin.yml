@@ -1,0 +1,26 @@
+uuid: 12e6648f-ac27-482b-be47-67a2361f86b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.product
+  module:
+    - devel_generate
+    - file
+    - node
+    - system
+    - toolbar
+id: content_admin
+label: 'Content Admin'
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'administer devel_generate'
+  - 'administer menu'
+  - 'create product content'
+  - 'delete own product content'
+  - 'edit own product content'
