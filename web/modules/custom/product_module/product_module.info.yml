@@ -1,0 +1,5 @@
+name: Product Module
+description: 'Provides ecommerce functionality.'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10

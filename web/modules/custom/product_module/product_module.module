@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * This file is used to adding e-commerce functionality to product nodes.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implemets hook_event_entity_view().
+ */
+function product_module_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  $user = \Drupal::currentUser()->isAnonymous();
+  if (!$user) {
+    if ($entity->bundle() == 'product' && $view_mode === 'full') {
+      $build['product_cart'] = [
+        '#type' => 'button',
+        '#name' => 'cart_button',
+        '#value' => t('Add To Cart'),
+        '#attributes' => [
+          'class' => ['button', 'button--primary', 'cart-btn']
+        ],
+        '#weight' => 6,
+      ];
+      $build['buy_btn'] = [
+        '#type' => 'button',
+        '#name' => 'buy_button',
+        '#value' => t('Buy Now'),
+        '#attributes' => ['class' => ['button', 'button--primary', 'buy-btn']],
+        '#weight' => 7,
+      ];
+      $build['message'] = [
+        '#prefix' => '<div class="cart-msg">',
+        '#suffix' => '</div>',
+        '#markup' => t(''),
+        '#weight' => 8,
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function product_module_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ($node->getType() == 'product') {
+    $variables['#attached']['library'][] = 'product_module/product_module_css';
+    $variables['#attached']['library'][] = 'product_module/product_module_product';
+  }
+}

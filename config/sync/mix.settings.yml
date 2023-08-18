@@ -10,5 +10,5 @@ error_page:
 config_import_ignore:
   mode: false
   list:
-    - 'mix.settings:dev_mode'
     - 'mix.settings:config_import_ignore'
+    - 'mix.settings:dev_mode'
