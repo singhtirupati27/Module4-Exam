@@ -1,0 +1,16 @@
+uuid: d8da2a75-4fd4-4db9-b8b3-521b4cfb8699
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: Dev
+description: ''
+weight: 0
+folder: ../config/split/dev
+module: {  }
+theme: {  }
+blacklist:
+  - system.site
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

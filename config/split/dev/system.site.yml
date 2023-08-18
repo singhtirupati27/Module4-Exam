@@ -6,8 +6,8 @@ name: Mod4-Exam
 mail: tirupati.singh@innoraft.com
 slogan: ''
 page:
-  403: ''
-  404: ''
+  403: /node/41
+  404: /node/42
   front: /node
 admin_compact_mode: false
 weight_select_max: 100
