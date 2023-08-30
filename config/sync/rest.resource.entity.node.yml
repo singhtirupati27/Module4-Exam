@@ -1,9 +1,8 @@
 uuid: b0750603-09a4-43d9-a234-17293d014c67
 langcode: en
-status: false
+status: true
 dependencies:
   module:
-    - basic_auth
     - hal
     - node
     - serialization
@@ -24,5 +23,4 @@ configuration:
     - json
     - xml
   authentication:
-    - basic_auth
     - cookie

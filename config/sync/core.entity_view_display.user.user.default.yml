@@ -7,6 +7,7 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - address
     - image
     - user
 _core:
@@ -17,7 +18,7 @@ bundle: user
 mode: default
 content:
   field_address:
-    type: basic_string
+    type: address_default
     label: above
     settings: {  }
     third_party_settings: {  }

@@ -1,8 +1,9 @@
-uuid: 327f86bf-4d5d-4d97-b068-8b62e55f58b8
+uuid: 7f145121-3ca2-4908-aa55-db71ef1e44fc
 langcode: en
 status: true
 dependencies:
   module:
+    - address
     - field_permissions
     - user
 third_party_settings:
@@ -11,10 +12,9 @@ third_party_settings:
 id: user.field_address
 field_name: field_address
 entity_type: user
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: address
+settings: {  }
+module: address
 locked: false
 cardinality: 1
 translatable: true

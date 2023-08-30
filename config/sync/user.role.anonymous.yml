@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - filter.format.restricted_html
+    - rest.resource.product_api
+    - rest.resource.product_resource
   module:
     - comment
     - contact
     - filter
+    - rest
     - search
     - system
 _core:
@@ -20,5 +23,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'restful get product_resource'
+  - 'restful get rest_module_product_api'
   - 'search content'
   - 'use text format restricted_html'

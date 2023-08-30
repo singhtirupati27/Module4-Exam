@@ -1,20 +1,18 @@
-uuid: ac01b317-ef5e-428b-b298-71b06c3e2d2e
+uuid: cda3f4c7-668d-4293-9ae3-8ca39bc3e835
 langcode: en
 status: false
 dependencies:
   module:
     - basic_auth
-    - hal
-    - node
+    - custom_restapi
     - serialization
-id: entity.node_type
-plugin_id: 'entity:node_type'
+id: product_resource
+plugin_id: product_resource
 granularity: resource
 configuration:
   methods:
     - GET
   formats:
-    - hal_json
     - json
     - xml
   authentication:

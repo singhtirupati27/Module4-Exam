@@ -1,20 +1,19 @@
-uuid: 00a94625-84af-44a0-b77f-005a6a6720ff
+uuid: 39acc0c6-d5b2-4ed3-a8dc-213732ed718e
 langcode: en
 status: true
 dependencies:
   module:
     - basic_auth
-    - custom_restapi
+    - rest_module
     - serialization
 _core:
-  default_config_hash: gsvYBychPdJbiOo7DURBLwVkFOuUwte0AOakuwI4Aao
-id: product_resource_config
-plugin_id: product_resource
+  default_config_hash: 8xDlEGjEVAnJRystvjmrOwG9i8NSMVg6Kso33MHTU7k
+id: product_api
+plugin_id: rest_module_product_api
 granularity: method
 configuration:
   GET:
     supported_formats:
       - json
-      - xml
     supported_auth:
       - basic_auth
