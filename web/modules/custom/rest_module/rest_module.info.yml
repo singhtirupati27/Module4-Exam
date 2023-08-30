@@ -1,0 +1,5 @@
+name: Rest Module
+description: 'This module provdies all data for product content type.'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10

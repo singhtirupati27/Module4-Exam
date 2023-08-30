@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * This file is used to adding e-commerce functionality to product nodes.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implemets hook_entity_view().
+ */
+function product_module_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  $user = \Drupal::currentUser()->isAnonymous();
+  if (!$user) {
+    if ($entity->bundle() == 'product' && $view_mode === 'full') {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ($node instanceof NodeInterface) {
+        $options = ['absolute' => TRUE];
+        $product_url = Url::fromRoute('product_module.order', ['id' => $node->id()], $options);
+        $url = '<div><a href="' . $product_url->toString() . '" class="button button--primary buy-btn">Buy Now</a></div';
+      }
+      $build['product_cart'] = [
+        '#type' => 'button',
+        '#name' => 'cart_button',
+        '#value' => t('Add To Cart'),
+        '#attributes' => [
+          'class' => ['button', 'button--primary', 'cart-btn']
+        ],
+        '#weight' => 6,
+      ];
+      // $build['add_cart'] = [
+      //   '#type' => 'image_button',
+      //   '#title' => t('Add To Cart'),
+      //   '#src' => \Drupal::moduleHandler()->getModule('product_module')->getPath() . '/images/cart.svg',
+      //   '#attributes' => [
+      //     'class' => ['button', 'button--primary', 'cart-btn'],
+      //   ],
+      //   '#weight' => 6,
+      // ];
+      $img = \Drupal::moduleHandler()->getModule('product_module')->getPath() . '/images/cart.svg';
+      $build['message'] = [
+        '#prefix' => '<div class="cart-msg">',
+        '#suffix' => '</div>',
+        '#markup' => t('<img src="/'. $img . '"><div class="cart-msgs"></div>'),
+        '#weight' => 7,
+      ];
+      $build['buy_btn'] = [
+        '#type' => 'markup',
+        '#markup' => t($url),
+        '#weight' => 8,
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function product_module_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ($node->getType() == 'product') {
+    // $variables['#attached']['library'][] = 'product_module/product_module_css';
+    $variables['#attached']['library'][] = 'product_module/product_module_product';
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function product_module_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'product_module/product_module_css';
+}

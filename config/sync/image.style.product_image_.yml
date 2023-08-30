@@ -1,0 +1,14 @@
+uuid: c4cdbcd3-130b-4a2d-a94e-cc3c309be873
+langcode: en
+status: true
+dependencies: {  }
+name: product_image_
+label: 'Product Image(250x250)'
+effects:
+  3120adbc-eba1-4b7a-b60c-657bbdf7435c:
+    uuid: 3120adbc-eba1-4b7a-b60c-657bbdf7435c
+    id: image_resize
+    weight: 1
+    data:
+      width: 250
+      height: 250

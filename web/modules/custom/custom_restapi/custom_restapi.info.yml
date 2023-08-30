@@ -1,0 +1,5 @@
+name: Custom REST api
+description: 'This module provide product content type all data.'
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10

@@ -1,0 +1,10 @@
+product_module_product:
+  version: 1.x
+  js:
+    js/product.js: {}
+
+product_module_css:
+  version: 1.x
+  css:
+    theme:
+      css/product.css: {}

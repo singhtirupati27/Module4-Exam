@@ -1,0 +1,15 @@
+product_module.message:
+  path: '/thank-you'
+  defaults:
+    _controller: '\Drupal\product_module\Controller\ProductModuleController::build'
+    _title: 'Thank You'
+  requirements:
+    _permission: 'product access'
+product_module.order:
+  path: '/order-product/{id}'
+  defaults:
+    _controller: '\Drupal\product_module\Controller\ProductModuleController::orderProduct'
+    _title: 'Thank You'
+  requirements:
+    _permission: 'product access'
+    id: ^\d+$
