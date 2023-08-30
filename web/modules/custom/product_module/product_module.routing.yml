@@ -5,3 +5,11 @@ product_module.message:
     _title: 'Thank You'
   requirements:
     _permission: 'product access'
+product_module.order:
+  path: '/order-product/{id}'
+  defaults:
+    _controller: '\Drupal\product_module\Controller\ProductModuleController::orderProduct'
+    _title: 'Thank You'
+  requirements:
+    _permission: 'product access'
+    id: ^\d+$

@@ -2,12 +2,10 @@
   color: red;
 }
 
-#cart-btn {
+/* #cart-btn {
   border: 2px solid red;
-}
+} */
 
-#cart-btn::before {
-  content: '';
-  background-image: url('../image/cart.svg');
-}
-
+/* .cart-msg {
+  background-image: url('../images/cart.svg');
+} */
